@@ -6,16 +6,43 @@
 //
 
 import SwiftUI
+import AudioKit
 
-struct ContentView: View {
-    var body: some View {
-        Text("Hello, world!")
-            .padding()
-    }
+class AKDemo {
+  var engine = AudioEngine()
+  var currTime: Double = 0
+
+  var player: AudioPlayer
+
+  init() {
+    let url = Bundle.main.url(forResource: "two_seconds", withExtension: "mp3")!
+    player = AudioPlayer()
+    try! player.load(url: url)
+
+    player.completionHandler = self.onComplete
+
+    engine.output = player
+
+    try! engine.start()
+  }
+
+  func play() {
+    player.play()
+  }
+
+  func onComplete() {
+    currTime = player.getCurrentTime()
+    print ("Curr time: \(currTime)") // !!!
+  }
 }
 
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView()
+struct ContentView: View {
+
+  @State var demo = AKDemo()
+
+  var body: some View {
+    Button("Play!") {
+      demo.play()
     }
+  }
 }

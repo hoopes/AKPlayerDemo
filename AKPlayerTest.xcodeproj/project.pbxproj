@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -11,6 +11,8 @@
 		1D1EEBC02672EA07002D1901 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D1EEBBF2672EA07002D1901 /* ContentView.swift */; };
 		1D1EEBC22672EA0B002D1901 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1D1EEBC12672EA0B002D1901 /* Assets.xcassets */; };
 		1D1EEBC52672EA0B002D1901 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1D1EEBC42672EA0B002D1901 /* Preview Assets.xcassets */; };
+		1D1EEBCE2672EA40002D1901 /* AudioKit in Frameworks */ = {isa = PBXBuildFile; productRef = 1D1EEBCD2672EA40002D1901 /* AudioKit */; };
+		1D1EEBD32672F588002D1901 /* two_seconds.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 1D1EEBD22672F588002D1901 /* two_seconds.mp3 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +22,7 @@
 		1D1EEBC12672EA0B002D1901 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1D1EEBC42672EA0B002D1901 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		1D1EEBC62672EA0B002D1901 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1D1EEBD22672F588002D1901 /* two_seconds.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = two_seconds.mp3; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -27,6 +30,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1D1EEBCE2672EA40002D1901 /* AudioKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -52,6 +56,7 @@
 		1D1EEBBC2672EA07002D1901 /* AKPlayerTest */ = {
 			isa = PBXGroup;
 			children = (
+				1D1EEBD22672F588002D1901 /* two_seconds.mp3 */,
 				1D1EEBBD2672EA07002D1901 /* AKPlayerTestApp.swift */,
 				1D1EEBBF2672EA07002D1901 /* ContentView.swift */,
 				1D1EEBC12672EA0B002D1901 /* Assets.xcassets */,
@@ -85,6 +90,9 @@
 			dependencies = (
 			);
 			name = AKPlayerTest;
+			packageProductDependencies = (
+				1D1EEBCD2672EA40002D1901 /* AudioKit */,
+			);
 			productName = AKPlayerTest;
 			productReference = 1D1EEBBA2672EA07002D1901 /* AKPlayerTest.app */;
 			productType = "com.apple.product-type.application";
@@ -112,6 +120,9 @@
 				Base,
 			);
 			mainGroup = 1D1EEBB12672EA07002D1901;
+			packageReferences = (
+				1D1EEBCC2672EA40002D1901 /* XCRemoteSwiftPackageReference "AudioKit" */,
+			);
 			productRefGroup = 1D1EEBBB2672EA07002D1901 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -126,6 +137,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1D1EEBD32672F588002D1901 /* two_seconds.mp3 in Resources */,
 				1D1EEBC52672EA0B002D1901 /* Preview Assets.xcassets in Resources */,
 				1D1EEBC22672EA0B002D1901 /* Assets.xcassets in Resources */,
 			);
@@ -328,6 +340,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		1D1EEBCC2672EA40002D1901 /* XCRemoteSwiftPackageReference "AudioKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/AudioKit/AudioKit";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.2.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		1D1EEBCD2672EA40002D1901 /* AudioKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1D1EEBCC2672EA40002D1901 /* XCRemoteSwiftPackageReference "AudioKit" */;
+			productName = AudioKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 1D1EEBB22672EA07002D1901 /* Project object */;
 }
